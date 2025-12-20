@@ -107,4 +107,4 @@ managedNodeGroups:
 
 eksctl create nodegroup -f ~/create_node/create-worker.yml
 
-
+More detail in: https://www.notion.so/EKS-Set-up-2ce056d55b0f80b1a7f6c0021a01a1f4?source=copy_link
