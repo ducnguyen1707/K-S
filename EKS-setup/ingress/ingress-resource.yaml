@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-resource
+  namespace: nginx-test
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  #   kubernetes.io/ingress.class: "nginx"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - adminabc.click
+    secretName: adminabc-cert
+  rules:
+  - host: 'adminabc.click'
+    http:
+      paths:
+      - path: /vendo(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: vendo-svc
+            port:
+              number: 80
+      - path: /cozy86(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: cozy86-svc
+            port:
+              number: 80

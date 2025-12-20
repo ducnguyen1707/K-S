@@ -1,0 +1,63 @@
+# =========================
+# Kubernetes Secrets
+# =========================
+**/Secret.yaml
+**/*secret*.yaml
+**/*secret*.yml
+
+# cert-manager sensitive files
+cert-manager/Secret.yaml
+cert-manager/*secret*
+
+# =========================
+# AWS credentials
+# =========================
+.aws/
+**/.aws/
+
+# env files
+.env
+.env.*
+*.env
+
+# =========================
+# Helm
+# =========================
+charts/
+Chart.lock
+**/charts/
+*.tgz
+
+# helm local cache
+.helm/
+.helmcache/
+.helmignore
+
+# =========================
+# Kube config
+# =========================
+kubeconfig
+kubeconfig.*
+**/kubeconfig*
+
+# =========================
+# Logs & temp
+# =========================
+*.log
+tmp/
+temp/
+*.tmp
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Shell
+# =========================
+*.sh~

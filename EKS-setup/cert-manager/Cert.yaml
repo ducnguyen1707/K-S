@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: adminabc-cert
+  namespace: nginx-test
+spec:
+  secretName: adminabc-cert
+  issuerRef:
+    name: acme-issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - 'adminabc.click'

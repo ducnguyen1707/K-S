@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: acme-issuer
+  namespace: cert-manager
+spec:
+  acme:
+    email: Ur mail
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: cert-hotel-web-route53
+    solvers:
+    - dns01:
+        route53:
+          region: Ur region
+          hostedZoneID: Host zone id
+          accessKeyID: ACC-key
+          secretAccessKeySecretRef:
+            name: cert-iam-secret
+            key: key
