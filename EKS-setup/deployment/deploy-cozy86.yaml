@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cozy86-web
+  namespace: nginx-test
+  labels:
+    app: cozy86-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cozy86-web
+  template:
+    metadata:
+      labels:
+        app: cozy86-web
+    spec:
+      containers:
+      - name: cozy86-web
+        image: nginx
+        ports:
+        - containerPort: 80
+
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 10

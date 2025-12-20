@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: acme-issuer
+  namespace: cert-manager
+spec:
+  acme:
+    email: ducngitech@gmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: cert-hotel-web-route53
+    solvers:
+    - dns01:
+        route53:
+          region: ap-southeast-1
+          hostedZoneID: Z04739443Q0MP69DDNNOC
+          accessKeyID: AKIA3H6MPKWKN67VBJVU
+          secretAccessKeySecretRef:
+            name: cert-iam-secret
+            key: key

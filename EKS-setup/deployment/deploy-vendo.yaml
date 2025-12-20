@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vendo-web
+  namespace: nginx-test
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: vendo-web
+  template:
+    metadata:
+      labels:
+        app: vendo-web
+    spec:
+      containers:
+      - name: vendo-web
+        image: nginx:latest
+        ports:
+        - containerPort: 80
