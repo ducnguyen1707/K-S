@@ -1,0 +1,74 @@
+############################
+# Ansible
+############################
+*.retry
+*.log
+
+# Inventory runtime
+inventory/*.retry
+inventory/*.log
+
+# Ansible cache
+.ansible/
+ansible.cfg.bak
+
+############################
+# Secrets / Sensitive
+############################
+*.key
+*.pem
+*.crt
+*.csr
+
+vault.yml
+vault.yaml
+vault_*.yml
+vault_*.yaml
+
+secrets.yml
+secrets.yaml
+
+# SSH
+.ssh/
+id_rsa*
+id_ed25519*
+
+############################
+# RKE2 / Kubernetes
+############################
+kubeconfig
+kubeconfig.yaml
+kubeconfig.yml
+
+rke2.yaml
+rke2.yml
+
+# Generated cluster files
+cluster/
+clusters/
+artifacts/
+
+############################
+# Terraform (nếu có dùng chung)
+############################
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+
+############################
+# OS / Editor
+############################
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+############################
+# Temporary
+############################
+tmp/
+temp/
