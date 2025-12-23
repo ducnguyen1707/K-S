@@ -1,0 +1,72 @@
+# ===== Terraform Files =====
+# Local state files - contain sensitive infrastructure data
+*.tfstate
+*.tfstate.*
+
+# Terraform lock files - version control specific provider versions
+.terraform.lock.hcl
+
+# Terraform directories - downloaded modules and providers
+.terraform/
+.terraform.lock.hcl
+
+# ===== Sensitive Files =====
+# Environment variable files with secrets
+.env
+.env.local
+*.tfvars
+*.tfvars.json
+!example.tfvars
+
+# SSH Keys
+*.pem
+*.pub
+*.key
+
+# ===== IDE & Editor Files =====
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+
+# General Editor
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ===== OS Files =====
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# ===== Build & Cache Files =====
+*.log
+*.out
+node_modules/
+dist/
+build/
+
+# ===== Crash Dumps =====
+crash.log
+crash.*.log
+
+# ===== Project-Specific =====
+# Override files for local development
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Backup files
+*.backup
+*.bak
