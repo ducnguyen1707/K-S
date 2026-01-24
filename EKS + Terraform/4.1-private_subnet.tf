@@ -8,7 +8,7 @@
 
 resource "aws_subnet" "private_zone1" {
     vpc_id            = aws_vpc.demo_vpc.id
-    cidr_block        = "192.0.0.64/26"  # 64-127
+    cidr_block        = "192.0.0.128/26"  # 128 - 191
     availability_zone = local.zone1 
    
     tags = {
@@ -20,7 +20,7 @@ resource "aws_subnet" "private_zone1" {
 
 resource "aws_subnet" "private_zone2" {
     vpc_id            = aws_vpc.demo_vpc.id
-    cidr_block        = "190.0.0.192/26"  # 192-255
+    cidr_block        = "192.0.0.192/26"  # 192-255
     availability_zone = local.zone2
     tags = {
         "Name" = "${local.env}-private-${local.zone2}"

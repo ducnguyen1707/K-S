@@ -16,7 +16,7 @@ resource "aws_subnet" "public_zone1" {
 
 resource "aws_subnet" "public_zone2" {
     vpc_id            = aws_vpc.demo_vpc.id
-    cidr_block        = "190.0.0.128/26"  # 128-191
+    cidr_block        = "192.0.0.64/26"  # 64-127
     availability_zone = local.zone2
     map_public_ip_on_launch = true
 
