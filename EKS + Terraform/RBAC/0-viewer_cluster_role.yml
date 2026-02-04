@@ -1,0 +1,10 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+# ClusterRole is a type of RBAC (Role-Based Access Control) resource
+# ClusterRole defines permissions (rules) that apply across the entire cluster, not just within a single namespace.
+metadata:
+  name: viewer
+rules:
+  - apiGroups: ["*"]
+    resources: ["deployments", "configmaps", "pods", "services", "secrets"]
+    verbs: ["get", "list", "watch"]
